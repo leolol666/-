@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+    int i, total, j, time;
+
+    while(scanf("%d", &i)!=EOF){
+        total = i;
+        time = 0;
+        j = 3;
+        while(i>=j){
+            total = total + i/j;
+            time = time+(i/j);
+            i = i/j + i%j;
+            if(time>=10){
+                j = j + time/10;
+                time =time%10;
+            }
+
+        }
+        if((j-i)==1) total++;
+        printf("%d\n", total);
+    }
+    return 0;
+}
